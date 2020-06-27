@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.black),
+      theme: ThemeData.dark(),
       home: AnimatedSplashScreen(),
       routes: {
         AnimatedSplashScreen.routeName: (context) => AnimatedSplashScreen(),
