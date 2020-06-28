@@ -17,7 +17,7 @@ class MenuButton extends StatelessWidget {
         bottom: 5.0,
       ),
       child: Card(
-        color: Colors.black38,
+        color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(45.0),
         ),

@@ -46,8 +46,14 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+                  const EdgeInsets.only(top: 20.0, left: 30.0, right: 30.0),
               child: new Image.asset('assets/images/pacman1.png'),
+            ),
+            new BackdropFilter(
+              filter: new ui.ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+              child: new Container(
+                color: Colors.black.withOpacity(0.75),
+              ),
             ),
             SizedBox(
               height: 10,
@@ -57,6 +63,9 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
               textAlign: TextAlign.center,
               overflow: TextOverflow.fade,
               style: TextStyle(
+                shadows: [
+                  Shadow(color: Colors.indigo,blurRadius: 7.0,offset: Offset(2.0, 2.0) )
+                ],
                   decoration: TextDecoration.none,
                   color: Colors.redAccent.withOpacity(0.7),
                   fontFamily: 'Retro Gaming',
