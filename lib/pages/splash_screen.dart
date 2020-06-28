@@ -24,28 +24,30 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> with Single
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        new Image.asset('assets/images/background.gif',
-        fit: BoxFit.fitHeight,
-        ),
-        new BackdropFilter(
-            filter: new ui.ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
-            child: new Container(
-              color: Colors.black.withOpacity(0.2),
-            ),
+    return Scaffold(
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          new Image.asset('assets/images/background.gif',
+          fit: BoxFit.fitHeight,
           ),
-        new Center(
-          child: new Text('ARCADE GAMES',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Retro Gaming',
-            fontSize: 45
-          ),),
-        )  
-      ],     
+          new BackdropFilter(
+              filter: new ui.ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+              child: new Container(
+                color: Colors.black.withOpacity(0.2),
+              ),
+            ),
+          new Center(
+            child: new Text('ARCADE GAMES',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Retro Gaming',
+              fontSize: 45
+            ),),
+          )  
+        ],     
+      ),
     );
   }
 }

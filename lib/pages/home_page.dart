@@ -1,3 +1,4 @@
+import 'package:Hack20_FuryUnd3rdogs/Widgets/emulator.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,21 +11,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page',
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold
-          ),
-        ),
-        centerTitle: true,
-      ),
-      drawer: Drawer(),
+//      appBar: AppBar(
+//        title: Text('Home Page',
+//        style: TextStyle(
+//          fontSize: 20,
+//          fontWeight: FontWeight.bold
+//          ),
+//        ),
+//        centerTitle: true,
+//      ),
+//      drawer: Drawer(),
       body: Padding(
         padding: EdgeInsets.all(8.0),
-        child: Container(
-          child: Center(child: Text('Hello World!!')),
-        ),
+        child: Emulator(),
       ),
     );
   }
