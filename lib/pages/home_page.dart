@@ -2,7 +2,7 @@ import 'dart:ui' as ui;
 import 'package:Hack20_FuryUnd3rdogs/layout_back/column_tile.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/last_column.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/row_tile.dart';
-import 'package:Hack20_FuryUnd3rdogs/pages/game_desc_page.dart';
+import 'package:Hack20_FuryUnd3rdogs/pages/mine_desc_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -47,8 +49,22 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black.withOpacity(0.75),
                   ),
                 ),
+                Positioned(
+                  top: 20,
+                  left: 20,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.grey.withOpacity(0.9),
+                    child: Icon(
+                      Icons.menu,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
                 Column(children: <Widget>[
                   RowTile(),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Text(
                     'arcade mania'.toUpperCase(),
                     textAlign: TextAlign.center,
@@ -65,115 +81,147 @@ class _HomePageState extends State<HomePage> {
                         fontSize: 35.0),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 20,
                   ),
                   RowTile(),
                   SizedBox(
-                    height: 466,
+                    height: 421,
                   ),
                   RowTile()
                 ]),
                 Positioned(
-                  top: 150,
-                  left: 25,
-                  bottom: 100,
-                  child: GestureDetector(
-                    onTap: () => {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => GameDescPage())),
-                    }, //tetris page add
-
-                    child: Text(
-                      '1)  Tetris',
-                      style: TextStyle(
-                        shadows: [
-                          Shadow(
-                            blurRadius: 5.0,
-                            color: Colors.greenAccent,
-                            offset: Offset(2.0, 2.0),
+                  top: 180,
+                  left: 110,
+                  child: new Image.asset(
+                    'assets/images/console.png',
+                    alignment: Alignment.center,
+                    width: 80,
+                    height: 80,
+                  ),
+                ),
+                Positioned(
+                  top: 280,
+                  left: 50,
+                  bottom: 70,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: <Widget>[
+                        RaisedButton(
+                          color: Colors.transparent,
+                          elevation: 10,
+                          highlightColor: Colors.greenAccent,
+                          onPressed: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => GameDescPage()))
+                          },
+                          child: Text(
+                            '1)  PACMAN',
+                            style: TextStyle(
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 5.0,
+                                    color: Colors.greenAccent,
+                                    offset: Offset(2.0, 2.0),
+                                  ),
+                                ],
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'Retro Gaming',
+                                fontWeight: FontWeight.w200),
                           ),
-                        ],
-                          color: Colors.white,
-                          fontSize: 20,
-                          //fontFamily: 'Sunset Boulevard',
-                          fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 200,
-                  left: 25,
-                  bottom: 100,
-                  child: GestureDetector(
-                    onTap: () => {
-                      null,
-                    }, //tetris page add
-
-                    child: Text(
-                      '2)  PAC-MAN',
-                      style: TextStyle(
-                          shadows: [
-                            Shadow(
-                              blurRadius: 5.0,
-                              color: Colors.greenAccent,
-                              offset: Offset(2.0, 2.0),
-                            ),
-                          ],
-                          color: Colors.white,
-                          fontSize: 20,
-                          //fontFamily: 'Sunset Boulevard',
-                          fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 250,
-                  left: 25,
-                  bottom: 100,
-                  child: GestureDetector(
-                    onTap: () => {
-                      null,
-                    }, //tetris page add
-
-                    child: Text(
-                      '3)  Minesweeper',
-                      style: TextStyle(
-                          shadows: [
-                            Shadow(
-                              blurRadius: 5.0,
-                              color: Colors.greenAccent,
-                              offset: Offset(2.0, 2.0),
-                            ),
-                          ],
-                          color: Colors.white,
-                          fontSize: 20,
-                          //fontFamily: 'Sunset Boulevard',
-                          fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 300,
-                  left: 25,
-                  bottom: 100,
-                  child: GestureDetector(
-                    onTap: () => {
-                      null,
-                    }, //tetris page add
-
-                    child: Text(
-                      '4)  Contra',
-                      style: TextStyle(
-                          shadows: [
-                            Shadow(
-                              blurRadius: 5.0,
-                              color: Colors.greenAccent,
-                              offset: Offset(2.0, 2.0),
-                            ),
-                          ],
-                          color: Colors.white,
-                          fontSize: 20,
-                          //fontFamily: 'Sunset Boulevard',
-                          fontWeight: FontWeight.w800),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RaisedButton(
+                          elevation: 10,
+                          color: Colors.transparent,
+                          highlightColor: Colors.greenAccent,
+                          onPressed: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => GameDescPage()))
+                          },
+                          child: Text(
+                            '2)  TETRIS',
+                            style: TextStyle(
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 5.0,
+                                    color: Colors.greenAccent,
+                                    offset: Offset(2.0, 2.0),
+                                  ),
+                                ],
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'Retro Gaming',
+                                fontWeight: FontWeight.w200),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RaisedButton(
+                          elevation: 10,
+                          color: Colors.transparent,
+                          highlightColor: Colors.greenAccent,
+                          onPressed: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => GameDescPage()))
+                          },
+                          child: Text(
+                            '3)  MINESW',
+                            style: TextStyle(
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 5.0,
+                                    color: Colors.greenAccent,
+                                    offset: Offset(2.0, 2.0),
+                                  ),
+                                ],
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'Retro Gaming',
+                                fontWeight: FontWeight.w200),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RaisedButton(
+                          elevation: 10,
+                          splashColor: Colors.redAccent,
+                          color: Colors.transparent,
+                          highlightColor: Colors.greenAccent,
+                          onPressed: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => GameDescPage()))
+                          },
+                          child: Text(
+                            '4)  CONTRA',
+                            style: TextStyle(
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 5.0,
+                                    color: Colors.greenAccent,
+                                    offset: Offset(2.0, 2.0),
+                                  ),
+                                ],
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: 'Retro Gaming',
+                                fontWeight: FontWeight.w200),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

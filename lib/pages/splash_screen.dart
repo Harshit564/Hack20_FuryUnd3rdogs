@@ -67,7 +67,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
                   Shadow(color: Colors.indigo,blurRadius: 7.0,offset: Offset(2.0, 2.0) )
                 ],
                   decoration: TextDecoration.none,
-                  color: Colors.redAccent.withOpacity(0.7),
+                  color: Colors.red.withOpacity(0.7),
                   fontFamily: 'Retro Gaming',
                   fontSize: 45),
             ),
