@@ -4,6 +4,8 @@ import 'package:Hack20_FuryUnd3rdogs/layout_back/column_tile.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/last_column.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/row_tile.dart';
 import 'package:Hack20_FuryUnd3rdogs/pages/mine_desc_page.dart';
+import 'package:Hack20_FuryUnd3rdogs/pages/pacman_desc_page.dart';
+import 'package:Hack20_FuryUnd3rdogs/pages/tetris_desc_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -141,7 +143,7 @@ class _HomePageState extends State<HomePage> {
         ),
         Padding(
           padding: const EdgeInsets.only(
-              top: 45.0, bottom: 40.0, left: 35.0, right: 35.0),
+              top: 45.0, bottom: 83.0, left: 35.0, right: 35.0),
           child: Material(
             child: Stack(
               fit: StackFit.loose,
@@ -220,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => GameDescPage()))
+                                    builder: (context) => PacDescPage()))
                           },
                           child: Text(
                             '1)  PACMAN',
@@ -249,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => GameDescPage()))
+                                    builder: (context) => TetrisDescPage()))
                           },
                           child: Text(
                             '2)  TETRIS',
@@ -278,7 +280,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => GameDescPage()))
+                                    builder: (context) => MineDescPage()))
                           },
                           child: Text(
                             '3)  MINESW',
@@ -299,33 +301,33 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(
                           height: 10,
                         ),
-                        RaisedButton(
-                          elevation: 10,
-                          splashColor: Colors.redAccent,
-                          color: Colors.transparent,
-                          highlightColor: Colors.greenAccent,
-                          onPressed: () => {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => GameDescPage()))
-                          },
-                          child: Text(
-                            '4)  CONTRA',
-                            style: TextStyle(
-                                shadows: [
-                                  Shadow(
-                                    blurRadius: 5.0,
-                                    color: Colors.greenAccent,
-                                    offset: Offset(2.0, 2.0),
-                                  ),
-                                ],
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'Retro Gaming',
-                                fontWeight: FontWeight.w200),
-                          ),
-                        ),
+//                        RaisedButton(
+//                          elevation: 10,
+//                          splashColor: Colors.redAccent,
+//                          color: Colors.transparent,
+//                          highlightColor: Colors.greenAccent,
+//                          onPressed: () => {
+//                            Navigator.pushReplacement(
+//                                context,
+//                                MaterialPageRoute(
+//                                    builder: (context) => GameDescPage()))
+//                          },
+//                          child: Text(
+//                            '4)  CONTRA',
+//                            style: TextStyle(
+//                                shadows: [
+//                                  Shadow(
+//                                    blurRadius: 5.0,
+//                                    color: Colors.greenAccent,
+//                                    offset: Offset(2.0, 2.0),
+//                                  ),
+//                                ],
+//                                color: Colors.white,
+//                                fontSize: 20,
+//                                fontFamily: 'Retro Gaming',
+//                                fontWeight: FontWeight.w200),
+//                          ),
+//                        ),
                       ],
                     ),
                   ),

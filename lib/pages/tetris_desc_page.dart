@@ -6,12 +6,12 @@ import 'package:Hack20_FuryUnd3rdogs/pages/home_page.dart';
 import 'package:Hack20_FuryUnd3rdogs/widgets/emulator.dart';
 import 'package:flutter/material.dart';
 
-class PacDescPage extends StatefulWidget {
+class TetrisDescPage extends StatefulWidget {
   @override
-  _PacDescPageState createState() => _PacDescPageState();
+  _TetrisDescPageState createState() => _TetrisDescPageState();
 }
 
-class _PacDescPageState extends State<PacDescPage> {
+class _TetrisDescPageState extends State<TetrisDescPage> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -49,7 +49,7 @@ class _PacDescPageState extends State<PacDescPage> {
                     height: 30,
                   ),
                   Text(
-                    'pacman'.toUpperCase(),
+                    'tetris'.toUpperCase(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         shadows: [
@@ -68,7 +68,7 @@ class _PacDescPageState extends State<PacDescPage> {
                   ),
                   RowTile(),
                   SizedBox(
-                    height: 489,
+                    height: 466,
                   ),
                   RowTile()
                 ]),
@@ -80,7 +80,7 @@ class _PacDescPageState extends State<PacDescPage> {
                 Positioned(
                   top: 300,
                   left: 100,
-                  child: Text('Pacman',style: TextStyle(fontSize: 16),),
+                  child: Text('Tetris',style: TextStyle(fontSize: 16),),
                 ),
                 Positioned(
                   top: 500,

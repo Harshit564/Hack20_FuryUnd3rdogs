@@ -10,7 +10,7 @@ void main() {
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   Util flameUtil = Util();
   flameUtil.fullScreen();
-  flameUtil.setOrientation(DeviceOrientation.portraitUp);
+  //flameUtil.setOrientation(DeviceOrientation.portraitUp);
   Flame.images.loadAll(<String>[
     'ground.png',
     'wall/wall_down_close_left.png',

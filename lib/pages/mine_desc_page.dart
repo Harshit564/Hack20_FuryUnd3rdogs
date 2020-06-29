@@ -6,12 +6,12 @@ import 'package:Hack20_FuryUnd3rdogs/pages/home_page.dart';
 import 'package:Hack20_FuryUnd3rdogs/widgets/emulator.dart';
 import 'package:flutter/material.dart';
 
-class GameDescPage extends StatefulWidget {
+class MineDescPage extends StatefulWidget {
   @override
-  _GameDescPageState createState() => _GameDescPageState();
+  _MineDescPageState createState() => _MineDescPageState();
 }
 
-class _GameDescPageState extends State<GameDescPage> {
+class _MineDescPageState extends State<MineDescPage> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,7 +29,7 @@ class _GameDescPageState extends State<GameDescPage> {
         ),
         Padding(
           padding: const EdgeInsets.only(
-              top: 45.0, bottom: 40.0, left: 35.0, right: 35.0),
+              top: 45.0, bottom: 83.0, left: 35.0, right: 35.0),
           child: Material(
             child: Stack(
               fit: StackFit.loose,
@@ -45,8 +45,11 @@ class _GameDescPageState extends State<GameDescPage> {
                 ),
                 Column(children: <Widget>[
                   RowTile(),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Text(
-                    'arcade mania'.toUpperCase(),
+                    'minesweeper'.toUpperCase(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         shadows: [
@@ -58,17 +61,27 @@ class _GameDescPageState extends State<GameDescPage> {
                         ],
                         fontFamily: 'Retro Gaming',
                         fontWeight: FontWeight.bold,
-                        fontSize: 35.0),
+                        fontSize: 30.0),
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   RowTile(),
                   SizedBox(
-                    height: 466,
+                    height: 489,
                   ),
                   RowTile()
                 ]),
+                Positioned(
+                  top: 150,
+                  left: 110,
+                  child: Image.asset('assets/images/console.png',width: 80,height: 80,),
+                ),
+                Positioned(
+                  top: 300,
+                  left: 100,
+                  child: Text('Minesweeper',style: TextStyle(fontSize: 16),),
+                ),
                 Positioned(
                   top: 500,
                   left: 50,
