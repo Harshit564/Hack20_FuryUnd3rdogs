@@ -35,7 +35,7 @@ class _EmulatorState extends State<Emulator> {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                child: Expanded(child: MinesweeperGame()),
+                child: MinesweeperGame(),
               ),
             ),
             Expanded(
