@@ -35,17 +35,13 @@ class _GameDescPageState extends State<GameDescPage> {
               fit: StackFit.loose,
               alignment: Alignment.topLeft,
               children: <Widget>[
-                Positioned(
-                  top: 30,
-                  left: 20,
-                  child: IconButton(
-                    onPressed: () => {
-                      Navigator.pushReplacementNamed(context,
-                          HomePage.routeName)
-                    },
-                    icon: Icon(Icons.arrow_back_ios),
-                    color: Colors.grey,
-                  ),
+                IconButton(
+                  onPressed: () => {
+                    print('kasndkas'),
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()))
+                  },
+                  icon: Icon(Icons.arrow_back_ios),
+                  color: Colors.grey,
                 ),
                 Column(children: <Widget>[
                   RowTile(),

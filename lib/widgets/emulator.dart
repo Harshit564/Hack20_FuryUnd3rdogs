@@ -1,4 +1,5 @@
 import 'package:Hack20_FuryUnd3rdogs/minesweeper/board.dart';
+import 'package:Hack20_FuryUnd3rdogs/pacman/Game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +36,7 @@ class _EmulatorState extends State<Emulator> {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                child: Expanded(child: MinesweeperGame()),
+                child: Expanded(child: Game()),
               ),
             ),
             Expanded(

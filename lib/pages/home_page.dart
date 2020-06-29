@@ -1,10 +1,14 @@
 import 'dart:ui' as ui;
+import 'package:Hack20_FuryUnd3rdogs/about/about_screen.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/column_tile.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/last_column.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/row_tile.dart';
 import 'package:Hack20_FuryUnd3rdogs/pages/mine_desc_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_share/flutter_share.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/home-page";
@@ -14,7 +18,111 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String launchUrl = "";
 
+  Future<dynamic> _launchUrl(String url) async {
+    setState(() {
+      launchUrl = url;
+    });
+    if (await canLaunch(launchUrl)) {
+      await launch(launchUrl);
+    } else {
+      throw 'Could not launch $launchUrl';
+    }
+  }
+
+  _launchgmail() async {
+    const url =
+        'mailto:harshitsingh15967@gmail.com?subject=Feedback&body=Feedback for Our Support';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  Future<void> sharer() async {
+    await FlutterShare.share(
+        title: 'Retro game share',
+        text: 'Download Hack20 Game Android application',
+        linkUrl:
+            'https://play.google.com/store/apps/',
+        chooserTitle: 'Hack20 Fury_Und3rdogs');
+  }
+
+  Future<bool> _popUpBox(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return new AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+              side: BorderSide(style: BorderStyle.solid,width: 10,color: Colors.grey),
+            ),
+            elevation: 20,
+            titleTextStyle: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blueAccent),
+            backgroundColor: Colors.black.withOpacity(0.9),
+            actions: <Widget>[
+              Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(FlutterIcons.account_supervisor_circle_mco),
+                    onPressed: () => _launchUrl('https://store.steampowered.com/games/'),
+                    iconSize: 20,
+                  ),
+//                  IconButton(
+//                    icon: Icon(Feather.facebook),
+//                    iconSize: 20,
+//                    onPressed: () => _launchUrl('https://www.facebook.com/'),
+//                  ),
+                  IconButton(
+                    iconSize: 20,
+                    onPressed: () => _launchUrl('https://www.linkedin.com/'),
+                    icon: Icon(Feather.linkedin),
+                  ),
+                  IconButton(
+                    iconSize: 20,
+                    onPressed: () => _launchUrl('https://www.twitter.com/'),
+                    icon: Icon(Feather.twitter),
+                  ),
+                  IconButton(
+                    iconSize: 20,
+                    onPressed: () => sharer(),
+                    icon: Icon(Feather.share),
+                  ),
+                  IconButton(
+                    onPressed: () => _launchgmail(),
+                    icon: Icon(Feather.mail),
+                    iconSize: 20,
+                  ),
+                ],
+              )
+            ],
+            title: Center(child: Text('Add')),
+            content: Container(
+              color: Colors.transparent,
+              height: 80,
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.info,color: Colors.blueAccent,),
+                    title: Text('About Us',style: TextStyle(color: Colors.blueAccent),),
+                    onTap: () => {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AboutUsPage()))
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,16 +157,13 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black.withOpacity(0.75),
                   ),
                 ),
-                Positioned(
-                  top: 20,
-                  left: 20,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.grey.withOpacity(0.9),
-                    child: Icon(
-                      Icons.menu,
-                      color: Colors.black,
-                    ),
+                IconButton(
+                  color: Colors.red.withOpacity(0.9),
+                  icon: Icon(
+                    Icons.menu,
+                    color: Colors.grey,
                   ),
+                  onPressed: () => _popUpBox(context),
                 ),
                 Column(children: <Widget>[
                   RowTile(),

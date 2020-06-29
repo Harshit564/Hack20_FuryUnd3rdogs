@@ -59,7 +59,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
               height: 10,
             ),
             new Text(
-              'ARCADE GAMES',
+              'ARCADE MANIA',
               textAlign: TextAlign.center,
               overflow: TextOverflow.fade,
               style: TextStyle(
@@ -67,7 +67,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
                   Shadow(color: Colors.indigo,blurRadius: 7.0,offset: Offset(2.0, 2.0) )
                 ],
                   decoration: TextDecoration.none,
-                  color: Colors.red.withOpacity(0.7),
+                  color: Colors.red.withOpacity(0.8),
                   fontFamily: 'Retro Gaming',
                   fontSize: 45),
             ),
