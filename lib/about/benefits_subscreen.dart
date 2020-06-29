@@ -23,7 +23,7 @@ class BenefitsSubscreen extends StatelessWidget {
             height: 200.0,
           ),
           Text(
-            'All medical benefits'.toUpperCase(),
+            'Gaming benefits'.toUpperCase(),
             style: GoogleFonts.nunito(
               color: CustomColors.textGreen,
               fontSize: 15,
@@ -56,7 +56,8 @@ class BenefitsSubscreen extends StatelessWidget {
             height: 25,
           ),
           Text(
-            'Get the most out of your virtual doctor, \nJust like an in-person visit',
+            '“Do you like hurting other people?” \n'
+                '– Hotline Miami',
             textAlign: TextAlign.center,
             style: GoogleFonts.nunito(
               color: CustomColors.text,
@@ -69,7 +70,7 @@ class BenefitsSubscreen extends StatelessWidget {
             height: 50,
           ),
           Text(
-            'Your doctor will take your history and symptoms, perform an exam, and may recommend treatment - including prescriptions and lab work. They can also provide a doctor’s note, if needed.',
+            'Best experience to revive your mood by playing atari and nintendo style games on mobile emulator',
             textAlign: TextAlign.center,
             style: GoogleFonts.nunito(
               color: CustomColors.text,
@@ -94,7 +95,7 @@ class BenefitsSubscreen extends StatelessWidget {
               SizedBox(width: 45),
               SvgLabel(
                 assetName: 'assets/svg/money.svg',
-                label: 'Good \nprices',
+                label: 'Good \nStack',
               ),
             ],
           ),

@@ -20,7 +20,7 @@ class UrbanPlannersSubscreen extends StatelessWidget {
           height: 200,
         ),
         Text(
-          'Swaasth Ek Jaroorat'.toUpperCase(),
+          'Fury Un3rdogs'.toUpperCase(),
           textAlign: TextAlign.center,
           style: GoogleFonts.nunito(
             color: CustomColors.textGreen,
@@ -32,7 +32,7 @@ class UrbanPlannersSubscreen extends StatelessWidget {
           height: 40,
         ),
         Text(
-        'AapKaVaidya',
+        'Arcade Mania',
           textAlign: TextAlign.center,
           style: GoogleFonts.openSans(
             color: CustomColors.headerText,
@@ -55,7 +55,11 @@ class UrbanPlannersSubscreen extends StatelessWidget {
           height: 25,
         ),
         Text(
-          'Available when you are and without \nthe hassle of the waiting room. \nConnect in minutes with board-certified \nphysicians and doctoral-level therapists \nonline over live video from your \nsmartphone or tablet',
+          '“We’re not tools of the government \n'
+              'or anyone else. Fighting was the \n'
+              'only thing I was good at, but at \n'
+              'least I always fought for what \n'
+              'I believed in.”– Metal Gear Solid',
           textAlign: TextAlign.center,
           style: GoogleFonts.nunito(
             color: CustomColors.text,
@@ -102,7 +106,7 @@ class UrbanPlannersSubscreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              'Get the \nbest view',
+              'Get the \nbest exp',
               textAlign: TextAlign.left,
               style: GoogleFonts.poppins(
                 color: CustomColors.headerText,
@@ -115,7 +119,10 @@ class UrbanPlannersSubscreen extends StatelessWidget {
               height: 20,
             ),
             Text(
-              'Faster and less expensive \nthan a walk in clinic or ER, \nyou can chat with a doctor \nvirtually 24/7, nights and \nweekends included.',
+              '“The right man in the \n '
+                  'wrong place can make all \n'
+                  'the difference in the world.” \n'
+                  '– Half-Life 2',
               style: GoogleFonts.nunito(
                 color: CustomColors.text,
                 fontSize: 16,

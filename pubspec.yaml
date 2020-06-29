@@ -80,6 +80,9 @@ flutter:
     - family: Sunset Boulevard
       fonts:
         - asset: assets/fonts/Sunset Boulevard.otf
+    - family: 8 bit
+      fonts:
+        - asset: assets/fonts/8_bit_madness.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

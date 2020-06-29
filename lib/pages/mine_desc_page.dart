@@ -31,6 +31,9 @@ class _MineDescPageState extends State<MineDescPage> {
           padding: const EdgeInsets.only(
               top: 45.0, bottom: 83.0, left: 35.0, right: 35.0),
           child: Material(
+            color: Colors.black,
+            elevation: 15,
+            shadowColor: Colors.blueAccent,
             child: Stack(
               fit: StackFit.loose,
               alignment: Alignment.topLeft,
@@ -73,14 +76,18 @@ class _MineDescPageState extends State<MineDescPage> {
                   RowTile()
                 ]),
                 Positioned(
-                  top: 150,
-                  left: 110,
-                  child: Image.asset('assets/images/console.png',width: 80,height: 80,),
+                  top: 130,
+                  left: 80,
+                  child: Image.asset('assets/images/p3.png',width: 150,height: 150,),
                 ),
                 Positioned(
                   top: 300,
-                  left: 100,
-                  child: Text('Minesweeper',style: TextStyle(fontSize: 16),),
+                  left: 40,
+                  child: Text('Minesweeper is a single-player \n'
+                      'puzzle video game by\n'
+                      'Microsoft corporation',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,fontFamily: '8 bit'),),
                 ),
                 Positioned(
                   top: 500,

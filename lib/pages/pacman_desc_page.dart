@@ -31,6 +31,9 @@ class _PacDescPageState extends State<PacDescPage> {
           padding: const EdgeInsets.only(
               top: 45.0, bottom: 83.0, left: 35.0, right: 35.0),
           child: Material(
+            color: Colors.black,
+            elevation: 15,
+            shadowColor: Colors.blueAccent,
             child: Stack(
               fit: StackFit.loose,
               alignment: Alignment.topLeft,
@@ -75,12 +78,17 @@ class _PacDescPageState extends State<PacDescPage> {
                 Positioned(
                   top: 150,
                   left: 110,
-                  child: Image.asset('assets/images/console.png',width: 80,height: 80,),
+                  child: Image.asset('assets/images/p1.png',width: 80,height: 80,),
                 ),
                 Positioned(
                   top: 300,
-                  left: 100,
-                  child: Text('Pacman',style: TextStyle(fontSize: 16),),
+                  left: 35,
+                  child: Text('Pac-Man is a Japanese video game \n'
+                      'franchise published and owned \n'
+                      'by Bandai Namco Entertainment, \n'
+                      'formerly Namco',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,fontFamily: '8 bit'),),
                 ),
                 Positioned(
                   top: 500,

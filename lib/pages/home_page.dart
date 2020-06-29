@@ -47,8 +47,7 @@ class _HomePageState extends State<HomePage> {
     await FlutterShare.share(
         title: 'Retro game share',
         text: 'Download Hack20 Game Android application',
-        linkUrl:
-            'https://play.google.com/store/apps/',
+        linkUrl: 'https://play.google.com/store/apps/',
         chooserTitle: 'Hack20 Fury_Und3rdogs');
   }
 
@@ -59,20 +58,20 @@ class _HomePageState extends State<HomePage> {
           return new AlertDialog(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
-              side: BorderSide(style: BorderStyle.solid,width: 10,color: Colors.grey),
+              side: BorderSide(
+                  style: BorderStyle.solid, width: 10, color: Colors.grey),
             ),
             elevation: 20,
             titleTextStyle: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.blueAccent),
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
             backgroundColor: Colors.black.withOpacity(0.9),
             actions: <Widget>[
               Row(
                 children: <Widget>[
                   IconButton(
                     icon: Icon(FlutterIcons.account_supervisor_circle_mco),
-                    onPressed: () => _launchUrl('https://store.steampowered.com/games/'),
+                    onPressed: () =>
+                        _launchUrl('https://store.steampowered.com/games/'),
                     iconSize: 20,
                   ),
 //                  IconButton(
@@ -103,15 +102,42 @@ class _HomePageState extends State<HomePage> {
                 ],
               )
             ],
-            title: Center(child: Text('Add')),
+            title: Center(
+                child: Text(
+              'Add',
+              style: TextStyle(
+                shadows: [
+                  Shadow(
+                    blurRadius: 7.0,
+                    color: Colors.redAccent,
+                    offset: Offset(2.0, 2.0),
+                  ),
+                ],
+              ),
+            )),
             content: Container(
               color: Colors.transparent,
               height: 80,
               child: Column(
                 children: <Widget>[
                   ListTile(
-                    leading: Icon(Icons.info,color: Colors.blueAccent,),
-                    title: Text('About Us',style: TextStyle(color: Colors.blueAccent),),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blueAccent,
+                    ),
+                    title: Text(
+                      'About Us',
+                      style: TextStyle(
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 7.0,
+                            color: Colors.redAccent,
+                            offset: Offset(2.0, 2.0),
+                          ),
+                        ],
+                      ),
+                    ),
                     onTap: () => {
                       Navigator.pushReplacement(
                           context,
