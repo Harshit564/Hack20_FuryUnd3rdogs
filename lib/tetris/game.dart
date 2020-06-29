@@ -201,13 +201,13 @@ class _Game extends State<Game> {
                 : getGameOverText(score),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            ScoreDisplay(score),
-            UserInput(onActionButtonPressed),
-          ],
-        )
+//        Row(
+//          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//          children: <Widget>[
+//            ScoreDisplay(score),
+//            UserInput(onActionButtonPressed),
+//          ],
+//        )
       ],
     );
   }
