@@ -44,27 +44,24 @@ class _MainSceneState extends State<MainScene> {
                         stream: gamesStarted.stream,
                         builder: (context, _) {
                           return Container(
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 16.0, right: 10.0, top: 16.0, bottom: 4.0),
-                              child: Row(
-                                children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.only(right: 25.0),
-                                      child: Text('Score', style: TextStyle(
-                                        fontSize: 32,
-                                        color: Colors.white,
-                                        fontFamily: '8BitMadness'
-                                  ),),
-                                    ),
-                                  Text(
-                                    "${game != null ? game.gameMapController.player.points : "0"}",
-                                    style: TextStyle(
-                                    fontSize: 32,
-                                    color: Colors.white,
-                                    fontFamily: '8BitMadness'
-                                  ),),
-                                ],
-                              ),
+                            child: Row(
+                              children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(right: 25.0),
+                                    child: Text('Score', style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontFamily: '8BitMadness'
+                                ),),
+                                  ),
+                                Text(
+                                  "${game != null ? game.gameMapController.player.points : "0"}",
+                                  style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontFamily: '8BitMadness'
+                                ),),
+                              ],
                             ),
                           );
                         },

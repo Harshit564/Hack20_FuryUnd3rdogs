@@ -1,4 +1,5 @@
 import 'package:Hack20_FuryUnd3rdogs/minesweeper/board.dart';
+import 'package:Hack20_FuryUnd3rdogs/pages/home_page.dart';
 import 'package:Hack20_FuryUnd3rdogs/tetris/game.dart';
 //import 'package:Hack20_FuryUnd3rdogs/pacman/Game.dart';
 import 'package:Hack20_FuryUnd3rdogs/tetris/game_display.dart';
@@ -114,7 +115,9 @@ class _EmulatorState extends State<Emulator> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: GestureDetector(
-                                onTap: widget.select,
+                                onTap: () => {
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()))
+                                },
                                 child: Image.asset(
                                   'assets/images/select.png',
                                   width: 50.0,

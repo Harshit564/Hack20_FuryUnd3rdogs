@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 import 'helper.dart';
 import 'dart:async';
 import 'blocks/block.dart';
@@ -6,8 +7,6 @@ import 'blocks/alivePoint.dart';
 import 'scoreDisplay.dart';
 import 'userInput.dart';
 import 'settings.dart';
-
-
 
 class Game extends StatefulWidget {
   @override
@@ -187,39 +186,43 @@ class _Game extends State<Game> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            colorFilter: new ColorFilter.mode(
-                Colors.black.withOpacity(0.7), BlendMode.dstATop),
-            image: AssetImage("assets/images/bg1.jpeg"),
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Center(
-              child: Container(
-                width: settings.pixelWidth,
-                height: settings.pixelHeight,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
+      body: Stack(
+        children: <Widget>[
+//          new Image.asset(
+//            'assets/images/background.gif',
+//            fit: BoxFit.cover,
+//          ),
+//          new BackdropFilter(
+//            filter: new ui.ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+//            child: new Container(
+//              color: Colors.black.withOpacity(0.2),
+//            ),
+//          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Center(
+                child: Container(
+                  width: settings.pixelWidth,
+                  height: settings.pixelHeight,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child: (playerLost() == false)
+                      ? drawTetrisBlocks()
+                      : getGameOverText(score),
                 ),
-                child: (playerLost() == false)
-                    ? drawTetrisBlocks()
-                    : getGameOverText(score),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ScoreDisplay(score),
-                UserInput(onActionButtonPressed),
-              ],
-            )
-          ],
-        ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  ScoreDisplay(score),
+                  UserInput(onActionButtonPressed),
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }

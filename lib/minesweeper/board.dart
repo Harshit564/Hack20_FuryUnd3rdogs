@@ -139,7 +139,10 @@ class MinesweeperGameState extends State<MinesweeperGame> {
     int timeElapsed = stopwatch.elapsedMilliseconds ~/ 1000;
     return Container(
       child: Center(
-        child: buildBoard(),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 68.0),
+          child: buildBoard(),
+        ),
       ),
     );
 //      resizeToAvoidBottomPadding: false,
