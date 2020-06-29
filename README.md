@@ -1,16 +1,13 @@
-# Hack20_FuryUnd3rdogs
+<img src="assets/images/pacman1.png" align="right" alt="Image" height="100" width="100" />
 
-A new Flutter project.
+# 🏮&nbsp; Arcade Mania 
 
-## Getting Started
+A flutter and flame based android game and creating an arcade retro glimpse with Atari console feels.
 
-This project is a starting point for a Flutter application.
+## ✍&nbsp; About the project
 
-A few resources to get you started if this is your first Flutter project:
+Games that contain memories built with flutter and flame with the original Atari console look.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<br>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+“Retro is a symptom of a generation that is too lazy to innovate.” keeping this in mind, we used Flutter and Flame to build this game project for Hack20. We tried to bring atari 90s feels to the flutter based mobile game and memorize everyone with it.
