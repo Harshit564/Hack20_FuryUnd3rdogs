@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 import 'package:Hack20_FuryUnd3rdogs/layout_back/column_tile.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/last_column.dart';
 import 'package:Hack20_FuryUnd3rdogs/layout_back/row_tile.dart';
+import 'package:Hack20_FuryUnd3rdogs/minesweeper/root.dart';
 import 'package:Hack20_FuryUnd3rdogs/pages/home_page.dart';
 import 'package:Hack20_FuryUnd3rdogs/widgets/emulator.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +97,7 @@ class _MineDescPageState extends State<MineDescPage> {
                   child: RaisedButton(
                     color: Colors.greenAccent,
                     onPressed: () => Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Emulator())),
+                        MaterialPageRoute(builder: (context) => MineRootPage())),
                     child: Text(
                       'PLAY!',
                       style: TextStyle(color: Colors.black),

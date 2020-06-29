@@ -125,7 +125,7 @@ class _MainSceneState extends State<MainScene> {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        "Arraste a tela no sentido em que deseja se mover",
+                        "",
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: '8BitMadness'

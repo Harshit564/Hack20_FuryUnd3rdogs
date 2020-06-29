@@ -16,6 +16,7 @@ class MinesweeperGameState extends State<MinesweeperGame> {
   final int cols = 9;
   final int numOfMines = 11;
 
+
   List<List<TileState>> uiState;
   List<List<bool>> tiles;
 
@@ -23,6 +24,8 @@ class MinesweeperGameState extends State<MinesweeperGame> {
   bool wonGame;
   int minesFound;
   Timer timer;
+  int selRow = 0;
+  int selCol = 0;
   Stopwatch stopwatch = Stopwatch();
 
   @override
@@ -32,6 +35,8 @@ class MinesweeperGameState extends State<MinesweeperGame> {
   }
 
   void resetBoard() {
+    selRow = 0;
+    selCol = 0;
     alive = true;
     wonGame = false;
     minesFound = 0;
@@ -122,8 +127,7 @@ class MinesweeperGameState extends State<MinesweeperGame> {
     }
 
     return Container(
-      color: Colors.grey[700],
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(2.0),
       child: Column(
         children: boardRow,
       ),
@@ -133,71 +137,61 @@ class MinesweeperGameState extends State<MinesweeperGame> {
   @override
   Widget build(BuildContext context) {
     int timeElapsed = stopwatch.elapsedMilliseconds ~/ 1000;
-    return Scaffold(
-      resizeToAvoidBottomPadding: false,
-      appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Mine Sweeper',
-            style: TextStyle(
-                fontFamily: 'OpenSans',
-                color: Colors.greenAccent,
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0),
-          ),
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(45.0),
-            child: Row(children: <Widget>[
-              SizedBox(
-                width: 10,
-              ),
-              FlatButton(
-                child: Text(
-                  'Reset Board',
-                  style: TextStyle(color: Colors.black,fontFamily: 'OpenSans',),
-                ),
-                onPressed: () => resetBoard(),
-                highlightColor: Colors.green,
-                splashColor: Colors.lightGreen,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
-                    color: Colors.blue[200],
-                  ),
-                ),
-                color: Colors.greenAccent,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                height: 40.0,
-                alignment: Alignment.center,
-                child: RichText(
-                  text: TextSpan(
-                      text: wonGame
-                          ? "You've Won! $timeElapsed seconds"
-                          : alive
-                          ? "[Mines Found: $minesFound] [Total Mines: $numOfMines] \n [$timeElapsed seconds]"
-                          : "You've Lost! $timeElapsed seconds"),
-                ),
-              ),
-            ]),
-          )),
-      body: Container(
-        color: Colors.grey[700],
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 50,
-            ),
-            Center(
-              child: buildBoard(),
-            ),
-          ],
-        ),
+    return Container(
+      child: Center(
+        child: buildBoard(),
       ),
     );
+//      resizeToAvoidBottomPadding: false,
+//      appBar: AppBar(
+//          centerTitle: true,
+//          title: Text(
+//            'Mine Sweeper',
+//            style: TextStyle(
+//                fontFamily: 'OpenSans',
+//                color: Colors.greenAccent,
+//                fontWeight: FontWeight.bold,
+//                fontSize: 20.0),
+//          ),
+//          bottom: PreferredSize(
+//            preferredSize: Size.fromHeight(45.0),
+//            child: Row(children: <Widget>[
+//              SizedBox(
+//                width: 10,
+//              ),
+//              FlatButton(
+//                child: Text(
+//                  'Reset Board',
+//                  style: TextStyle(color: Colors.black,fontFamily: 'OpenSans',),
+//                ),
+//                onPressed: () => resetBoard(),
+//                highlightColor: Colors.green,
+//                splashColor: Colors.lightGreen,
+//                shape: RoundedRectangleBorder(
+//                  borderRadius: BorderRadius.circular(10),
+//                  side: BorderSide(
+//                    color: Colors.blue[200],
+//                  ),
+//                ),
+//                color: Colors.greenAccent,
+//              ),
+//              SizedBox(
+//                width: 10,
+//              ),
+//              Container(
+//                height: 40.0,
+//                alignment: Alignment.center,
+//                child: RichText(
+//                  text: TextSpan(
+//                      text: wonGame
+//                          ? "You've Won! $timeElapsed seconds"
+//                          : alive
+//                          ? "[Mines Found: $minesFound] [Total Mines: $numOfMines] \n [$timeElapsed seconds]"
+//                          : "You've Lost! $timeElapsed seconds"),
+//                ),
+//              ),
+//            ]),
+//          )),
   }
 
   void probe(int x, int y) {
