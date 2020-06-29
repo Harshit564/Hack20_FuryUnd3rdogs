@@ -42,7 +42,7 @@ class _MineDescPageState extends State<MineDescPage> {
                 IconButton(
                   onPressed: () => {
                     print('kasndkas'),
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()))
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()))
                   },
                   icon: Icon(Icons.arrow_back_ios),
                   color: Colors.grey,

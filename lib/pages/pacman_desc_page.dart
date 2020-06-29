@@ -98,7 +98,7 @@ class _PacDescPageState extends State<PacDescPage> {
                   right: 50,
                   child: RaisedButton(
                     color: Colors.greenAccent,
-                    onPressed: () => Navigator.pushReplacement(context,
+                    onPressed: () => Navigator.push(context,
                         MaterialPageRoute(builder: (context) => PacmanRootPage())),
                     child: Text(
                       'PLAY!',
