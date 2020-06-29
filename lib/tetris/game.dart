@@ -186,29 +186,41 @@ class _Game extends State<Game> {
   }
 
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        Center(
-          child: Container(
-            width: settings.pixelWidth,
-            height: settings.pixelHeight,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-            ),
-            child: (playerLost() == false)
-                ? drawTetrisBlocks()
-                : getGameOverText(score),
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            colorFilter: new ColorFilter.mode(
+                Colors.black.withOpacity(0.7), BlendMode.dstATop),
+            image: AssetImage("assets/images/bg1.jpeg"),
           ),
         ),
-//        Row(
-//          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//          children: <Widget>[
-//            ScoreDisplay(score),
-//            UserInput(onActionButtonPressed),
-//          ],
-//        )
-      ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Center(
+              child: Container(
+                width: settings.pixelWidth,
+                height: settings.pixelHeight,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                ),
+                child: (playerLost() == false)
+                    ? drawTetrisBlocks()
+                    : getGameOverText(score),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ScoreDisplay(score),
+                UserInput(onActionButtonPressed),
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }

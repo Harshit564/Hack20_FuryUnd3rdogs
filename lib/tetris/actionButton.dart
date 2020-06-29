@@ -5,22 +5,20 @@ class ActionButton extends StatelessWidget {
   Function onClickedFunction;
   Icon buttonIcon;
   LastButtonPressed nextAction;
+  String imagePath;
 
 
-  ActionButton(this.onClickedFunction, this.buttonIcon, this.nextAction);
+  ActionButton(this.onClickedFunction, this.buttonIcon, this.nextAction, this.imagePath);
 
   Widget build(BuildContext context) {
-    return ButtonTheme(
+    return GestureDetector(
+      onTap: () {
+        onClickedFunction(nextAction);
+      },
       child: Padding(
-        padding: EdgeInsets.all(5),
-        child: RaisedButton(
-          onPressed: () {
-            onClickedFunction(nextAction);
-          },
-          color: Colors.blue,
-          child: buttonIcon,
-        ),
-      ),
+        padding: const EdgeInsets.all(8.0),
+        child: Image.asset(imagePath, height: 50.0, width: 50.0,),
+      )
     );
   }
 }
